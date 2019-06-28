@@ -1,0 +1,14 @@
+version: '2.4'
+
+services:
+  app:
+    image: php:7.3.6-cli-alpine
+    working_dir: /app
+    user: 1000:1000
+    volumes:
+      - ./do.php:/app/do.php
+      - ./trash.box:/app/trash.box
+    command: [
+      'php',
+      '/app/do.php'
+    ]
